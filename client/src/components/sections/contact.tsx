@@ -44,14 +44,14 @@ export function Contact() {
   });
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden w-screen">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 -left-20 w-60 h-60 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="container px-4">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
