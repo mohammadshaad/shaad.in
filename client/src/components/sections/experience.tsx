@@ -40,27 +40,44 @@ export function Experience() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-          <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-semibold mb-1">{exp.role}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      {exp.period}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          <h2 className="text-3xl font-bold mb-12 text-center">Experience</h2>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary/20" />
+
+            <div className="space-y-8">
+              {experiences.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 ${
+                    index % 2 === 0 ? 'md:text-right' : 'md:text-left md:translate-x-1/2'
+                  }`}
+                >
+                  {/* Timeline dot */}
+                  <div 
+                    className={`absolute left-0 md:left-1/2 top-5 w-4 h-4 rounded-full bg-primary transform 
+                      md:-translate-x-1/2 transition-transform duration-300 hover:scale-150`}
+                  />
+
+                  {/* Content */}
+                  <div className={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
+                    <Card className="hover:shadow-lg transition-all duration-300 hover:border-primary/20">
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-semibold mb-1">{exp.role}</h3>
+                        <p className="text-muted-foreground">{exp.company}</p>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          {exp.period}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

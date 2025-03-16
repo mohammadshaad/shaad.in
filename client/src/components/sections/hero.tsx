@@ -13,18 +13,6 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary/10"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf"
-              alt="Mohammad Shaad"
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-            />
-          </motion.div>
           <motion.h1 
             className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
