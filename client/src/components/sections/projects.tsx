@@ -33,7 +33,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,8 +42,10 @@ export function Projects() {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -51,24 +53,33 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group"
               >
-                <Card className="overflow-hidden h-full">
+                <Card className="overflow-hidden h-full border-0 bg-gradient-to-br from-background to-primary/5 hover:shadow-2xl transition-all duration-300 hover:shadow-primary/20">
                   <div className="aspect-video relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                  <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                  <CardHeader className="relative z-20 -mt-12 pt-0">
+                    <CardTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                      {project.title}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
+                  <CardContent className="relative z-20">
+                    <p className="text-muted-foreground mb-6 line-clamp-3">
                       {project.description}
                     </p>
-                    <Button variant="outline" size="sm">
-                      Learn More <ExternalLink className="ml-2 h-4 w-4" />
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+                    >
+                      View Project <ExternalLink className="ml-2 h-4 w-4" />
                     </Button>
                   </CardContent>
                 </Card>
