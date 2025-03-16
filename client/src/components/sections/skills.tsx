@@ -24,35 +24,54 @@ const skillCategories = [
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
+
 export function Skills() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 bg-gradient-to-b from-background to-primary/5">
       <div className="container px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
+          variants={containerVariants}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Skills & Expertise
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skillCategories.map((category, index) => (
+            {skillCategories.map((category) => (
               <motion.div
                 key={category.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
+                variants={itemVariants}
+                className="group"
               >
-                <Card>
+                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-primary/20 bg-gradient-to-br from-background to-primary/5">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-primary/10 rounded-full text-sm"
+                          className="px-3 py-1 bg-primary/10 rounded-full text-sm font-medium backdrop-blur-sm 
+                                   hover:bg-primary/20 transition-colors duration-200 cursor-default"
                         >
                           {skill}
                         </span>
