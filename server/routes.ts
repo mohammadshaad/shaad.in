@@ -3,11 +3,22 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertMessageSchema } from "@shared/schema";
 import nodemailer from "nodemailer";
+import { fromZodError } from "zod-validation-error";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
-      const data = insertMessageSchema.parse(req.body);
+      const parsed = insertMessageSchema.safeParse(req.body);
+
+      if (!parsed.success) {
+        const errorMessage = fromZodError(parsed.error);
+        return res.status(400).json({ 
+          message: "Invalid request data", 
+          errors: errorMessage.message 
+        });
+      }
+
+      const data = parsed.data;
       await storage.createMessage(data);
 
       // Send email notification
@@ -34,7 +45,7 @@ Message: ${data.message}
       res.status(200).json({ message: "Message sent successfully" });
     } catch (error) {
       console.error('Error:', error);
-      res.status(400).json({ message: "Invalid request data" });
+      res.status(500).json({ message: "Server error, please try again" });
     }
   });
 
