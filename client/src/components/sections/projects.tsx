@@ -33,8 +33,8 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background">
-      <div className="container px-4">
+    <section id="projects" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background w-full">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

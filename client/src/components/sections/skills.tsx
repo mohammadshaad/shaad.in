@@ -76,8 +76,8 @@ const itemVariants = {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-background to-primary/5">
-      <div className="container px-4">
+    <section id="skills" className="py-20 bg-gradient-to-b from-background to-primary/5 w-full">
+      <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"

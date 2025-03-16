@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
+      <main className="flex flex-col items-center w-full">
         <Hero />
         <About />
         <Skills />

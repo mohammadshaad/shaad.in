@@ -29,14 +29,14 @@ const socials = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
+    <section id="about" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden w-full">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 -left-20 w-60 h-60 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="container px-4">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,8 +112,7 @@ export function About() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 
-                               transition-all duration-300 hover:scale-105 transform"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-all duration-300 hover:scale-105 transform"
                       whileHover={{ y: -2 }}
                     >
                       <social.icon className="h-5 w-5" />
