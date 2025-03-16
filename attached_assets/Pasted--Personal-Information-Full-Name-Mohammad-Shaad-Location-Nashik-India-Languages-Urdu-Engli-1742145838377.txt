@@ -1,0 +1,58 @@
+🧑‍💻 Personal Information:
+Full Name: Mohammad Shaad
+Location: Nashik, India
+Languages: Urdu, English, Hindi, French (learning)
+Education:
+B.Tech in Computer Science — Vellore Institute of Technology (2021–2025)
+Previous School: YEWS National High School & Junior College, Nashik
+📞 Contact Information:
+Phone: +91-9226315691
+Email: callshaad@gmail.com
+🌐 Online Profiles:
+GitHub: mohammadshaad
+LinkedIn: mohammad-shaad-shaikh
+Behance: mohammadshaad
+Dribbble: mohammadshaad
+LeetCode: mohammadshaad
+Twitter: MohammadShaadsk
+🏅 Skills:
+Backend Development: Golang, Node.js, Python, Java
+Frontend Development: React.js, Next.js, JavaScript, TypeScript, HTML, CSS
+Databases: PostgreSQL, MongoDB, MySQL
+Cloud & DevOps: Google Cloud, AWS, Docker, Kubernetes, Jenkins, Ansible
+Design & UX: Figma, Adobe Creative Suite, User Research, Usability Testing, Interface Design
+Other Skills: Integrated Analytics, Mobile Applications, Brand Identity, Public Speaking, Empathy, Cross-Functional Task Management, Business Goals Alignment
+📜 Certifications:
+AWS Cloud Career Practitioner
+Google Cloud Digital Leader
+Foundations of User Experience (UX) Design
+Elastic Google Cloud Infrastructure: Scaling and Automation
+Create and Manage Cloud Resources
+Set Up and Configure a Cloud Environment in Google Cloud
+The Complete 2023 Web Development Bootcamp
+💼 Professional Experience:
+Zocket — Golang Backend Intern (Sep 2024 – Present)
+Samsung India — PRISM Developer (Sep 2023 – Present)
+Microsoft — Beta Microsoft Learn Student Ambassador (May 2023 – Present)
+Fraternity of Young Innovators — Advisory (Apr 2024 – Present), Technical Lead (Oct 2023 – Apr 2024)
+InfluCon Digitals — Freelance Software Developer (Aug 2023 – Jul 2024)
+Ministry of Electronics and Information Technology — Product Development Intern (Aug 2023 – Apr 2024)
+GIZMOLAB — Full Stack Developer (Aug 2023 – Jan 2024)
+Nexapex HR Global — Freelance Software Developer (Mar 2023 – Jun 2023)
+Sarvmatre International Pvt. Ltd. — UX/UI & Graphic Design Intern (Jan 2023 – May 2023)
+Enactus VIT Chennai — Technical Lead (Aug 2023 – Apr 2024), Graphic Designer & Video Editor (Apr 2022 – Aug 2023)
+Google Developer Student Club, VIT Chennai — Web Developer (Oct 2022 – May 2023), Graphic Designer & Video Editor (Sep 2021 – Oct 2022)
+Befikra Community — User Experience Designer (Apr 2022 – Apr 2023)
+GDSC WoW Chennai — Organizer (Mar 2023)
+Microsoft Innovations Club VITC — Designer (Aug 2021 – Aug 2022)
+LitSoc VIT Chennai — Video Editor (Mar 2022 – Apr 2022)
+🌟 Recent Projects:
+Real-Time Data Sync: Implemented a system for real-time synchronization of data between Google Sheets and PostgreSQL with CRUD operations and conflict resolution.
+Women's Safety Product: Built a system suggesting the safest path for users, a dashboard for monitoring CCTV footage, and an alert system.
+Turn-Based Chess Game: Designed a chess-like strategy game with unique character movements and combat rules on a 5x5 grid.
+Polkadot Node Setup: Created an Ansible Playbook for setting up Polkadot full nodes, including Nginx reverse proxy configuration.
+KlubMingle: Developed a university club task management app focused on task visibility and collaboration.
+🏏 Hobbies & Interests:
+Playing cricket and badminton
+Open-source projects
+Public speaking
