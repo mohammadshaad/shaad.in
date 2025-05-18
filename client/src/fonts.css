@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesque';
+    src: url('./fonts/grotesque/extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+} 
