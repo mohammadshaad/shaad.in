@@ -145,7 +145,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <span className="font-normal text-foreground text-base md:text-lg">A product builder passionate about  {" "}
+            {/* <span className="font-normal text-foreground text-base md:text-lg">A product builder passionate about  {" "}
               <span className="text-primary/80">user experience</span>
               , {" "}
               <span className="text-primary/80">full-stack engineering</span>
@@ -153,6 +153,10 @@ export function Hero() {
               &  {" "}
               <span className="text-primary/80">AI-powered solutions</span>
 
+            </span> */}
+            <span className="font-normal text-foreground text-lg md:text-2xl capitalize" >
+              From idea to scale —  {" "}
+              <span className="text-primary/80 font-bold">I ship with purpose.</span>
             </span>
           </motion.p>
           <motion.div
@@ -176,7 +180,7 @@ export function Hero() {
               className="border-2 border-primary/20 hover:bg-primary/5 transition-all
                        hover:scale-105 transform backdrop-blur-sm"
             >
-              <a href="#projects">View Projects</a>
+              <a href="#works">View My Works</a>
             </Button>
           </motion.div>
         </motion.div>
