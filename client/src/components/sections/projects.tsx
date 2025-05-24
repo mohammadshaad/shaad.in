@@ -179,7 +179,7 @@ export function Projects() {
                       </div>
                       <CardHeader className="relative z-20 -mt-12 pt-0">
                         <div className="flex flex-col gap-2">
-                          <CardTitle className="text-xl font-bold text-white">
+                          <CardTitle className="text-xl font-bold text-foreground">
                             {paper.title}
                           </CardTitle>
                           {paper.isUnderPublication && (
@@ -266,7 +266,7 @@ export function Projects() {
                         </div>
                       </div>
                       <CardHeader className="relative z-20 -mt-12 pt-0">
-                        <CardTitle className="text-xl font-bold text-white">
+                        <CardTitle className="text-xl font-bold text-foreground">
                           {project.title}
                         </CardTitle>
                       </CardHeader>
