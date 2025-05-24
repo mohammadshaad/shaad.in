@@ -5,11 +5,11 @@ import { MapPin, Calendar, ArrowRight } from "lucide-react";
 
 const experiences = [
   {
-    role: "Golang Backend Developer Intern",
+    role: "Golang Backend Developer",
     company: "Zocket",
     location: "Chennai",
     period: "Jan. 2025 – Present",
-    type: "Internship",
+    type: "Full-Time",
     achievements: [
       "Designed and implemented Schedule-Based Automation Rules to enable dynamic and time-triggered marketing workflows",
       "Engineered the complete backend system for Business Manager Creation and integrated AI-powered blog generation",
