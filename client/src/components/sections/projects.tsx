@@ -8,23 +8,26 @@ const researchPapers = [
   {
     title: "Early Detection of Retinopathy of Prematurity",
     description: "Research paper focusing on early detection methods for Retinopathy of Prematurity using advanced image processing and machine learning techniques.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
-    paper: "https://arxiv.org/abs/your-paper-id",
-    tech: ["Deep Learning", "Image Processing", "Medical Imaging", "Python", "TensorFlow"]
+    image: "https://educate.choroida.com/wp-content/uploads/2024/05/Retinopathy-of-Prematurity4.jpg",
+    paper: "https://ieeexplore.ieee.org/document/10895897",
+    tech: ["Deep Learning", "Image Processing", "Medical Imaging", "Python", "TensorFlow"],
+    isUnderPublication: false
   },
   {
-    title: "Hyperspectral Image Classification using State of the Art Mamba LLMs",
-    description: "Novel approach to hyperspectral image classification leveraging the power of Mamba Language Models for improved accuracy and efficiency.",
+    title: "Hyperspectral Image Classification using Ensemble Learning and SOTA LLMs",
+    description: "This paper presents a novel approach to hyperspectral image classification using ensemble learning and state-of-the-art language models. The proposed method combines the strengths of multiple classifiers to achieve improved accuracy and efficiency.",
     image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb",
-    paper: "https://arxiv.org/abs/your-paper-id",
-    tech: ["Mamba LLMs", "Hyperspectral Imaging", "Deep Learning", "Computer Vision"]
+    paper: "",
+    tech: ["Mamba LLMs", "Hyperspectral Imaging", "Deep Learning", "Computer Vision"],
+    isUnderPublication: true
   },
   {
-    title: "Spatial Audio Research",
-    description: "Presented a unique approach to spatial audio processing, developing a comprehensive database of impulse responses that enhanced research efficiency by 30%.",
+    title: "DUAL-PATH CNN BASED ANGLE OF ARRIVAL PREDICTION",
+    description: "This paper presents a novel approach to angle of arrival (AOA) prediction using dual-path convolutional neural networks (CNNs). The proposed method leverages the strengths of both single-path and dual-path CNNs to achieve improved accuracy and efficiency.",
     image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4",
-    paper: "https://arxiv.org/abs/your-paper-id",
-    tech: ["Audio Processing", "DSP", "MATLAB", "Python", "Signal Processing"]
+    paper: "",
+    tech: ["Deep Learning", "Computer Vision", "Signal Processing", "MATLAB", "Python"],
+    isUnderPublication: true
   }
 ];
 
@@ -134,9 +137,19 @@ export function Projects() {
                         />
                       </div>
                       <CardHeader className="relative z-20 -mt-12 pt-0">
-                        <CardTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                          {paper.title}
-                        </CardTitle>
+                        <div className="flex flex-col gap-2">
+                          <CardTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                            {paper.title}
+                          </CardTitle>
+                          {paper.isUnderPublication && (
+                            <div className="flex items-center gap-1.5">
+                              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                              <span className="text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20 shadow-sm">
+                                Under Publication
+                              </span>
+                            </div>
+                          )}
+                        </div>
                       </CardHeader>
                       <CardContent className="relative z-20 flex-1 flex flex-col">
                         <p className="text-muted-foreground mb-4 line-clamp-3 flex-1">
@@ -152,17 +165,19 @@ export function Projects() {
                             </span>
                           ))}
                         </div>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
-                          asChild
-                        >
-                          <a href={paper.paper} target="_blank" rel="noopener noreferrer">
-                            <FileText className="mr-2 h-4 w-4" />
-                            Read Paper
-                          </a>
-                        </Button>
+                        {!paper.isUnderPublication && paper.paper && (
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+                            asChild
+                          >
+                            <a href={paper.paper} target="_blank" rel="noopener noreferrer">
+                              <FileText className="mr-2 h-4 w-4" />
+                              Read Paper
+                            </a>
+                          </Button>
+                        )}
                       </CardContent>
                     </Card>
                   </motion.div>
