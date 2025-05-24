@@ -6,6 +6,12 @@ import nodemailer from "nodemailer";
 import { fromZodError } from "zod-validation-error";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.error('Missing email credentials. Please check your .env file and environment variables.');
+    console.error('EMAIL_USER:', process.env.EMAIL_USER ? 'set' : 'not set');
+    console.error('EMAIL_PASS:', process.env.EMAIL_PASS ? 'set' : 'not set');
+  }
+
   // Create reusable transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -14,7 +20,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       pass: process.env.EMAIL_PASS
     },
     tls: {
-      rejectUnauthorized: false // Only use this in development
+      rejectUnauthorized: process.env.NODE_ENV === 'production'
     }
   });
 
@@ -25,6 +31,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   } catch (error) {
     console.error('Email configuration error:', error);
   }
+
+  // Test route to verify environment variables
+  app.get("/api/test-email-config", (_req, res) => {
+    const hasEmailUser = !!process.env.EMAIL_USER;
+    const hasEmailPass = !!process.env.EMAIL_PASS;
+    res.json({
+      emailConfigured: hasEmailUser && hasEmailPass,
+      hasEmailUser,
+      hasEmailPass
+    });
+  });
 
   app.post("/api/contact", async (req, res) => {
     try {
