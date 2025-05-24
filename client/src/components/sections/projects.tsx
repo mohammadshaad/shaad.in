@@ -1,8 +1,36 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, FileText } from "lucide-react";
+import { ExternalLink, Github, FileText, Code2, Database, Server, Cpu, Cloud, Terminal, Layers } from "lucide-react";
 import { useState } from "react";
+
+// Icon mapping for technologies
+const techIcons: { [key: string]: any } = {
+  "Golang": Code2,
+  "Kafka": Server,
+  "AWS S3": Cloud,
+  "Redis": Database,
+  "Docker": Terminal,
+  "PostgreSQL": Database,
+  "Next.js": Code2,
+  "TypeScript": Code2,
+  "PRISMA": Database,
+  "MongoDB": Database,
+  "Auth0": Server,
+  "Nginx": Server,
+  "Java": Code2,
+  "Python": Code2,
+  "Node.js": Code2,
+  "Deep Learning": Cpu,
+  "Image Processing": Layers,
+  "Medical Imaging": Layers,
+  "TensorFlow": Cpu,
+  "Mamba LLMs": Cpu,
+  "Hyperspectral Imaging": Layers,
+  "Computer Vision": Layers,
+  "Signal Processing": Cpu,
+  "MATLAB": Code2
+};
 
 const researchPapers = [
   {
@@ -128,17 +156,30 @@ export function Projects() {
                     className="group h-full"
                   >
                     <Card className="overflow-hidden h-full border-0 bg-gradient-to-br from-background to-primary/5 hover:shadow-2xl transition-all duration-300 hover:shadow-primary/20 flex flex-col">
-                      <div className="aspect-video relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                        <img
-                          src={paper.image}
-                          alt={paper.title}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
+                      <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-primary/20 via-primary/10 to-transparent">
+                        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,black)]" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="grid grid-cols-3 gap-4 p-4">
+                            {paper.tech.slice(0, 6).map((tech, i) => {
+                              const Icon = techIcons[tech] || Code2;
+                              return (
+                                <motion.div
+                                  key={i}
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  transition={{ delay: i * 0.1 }}
+                                  className="flex items-center justify-center"
+                                >
+                                  <Icon className="w-8 h-8 text-primary/80" />
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
                       </div>
                       <CardHeader className="relative z-20 -mt-12 pt-0">
                         <div className="flex flex-col gap-2">
-                          <CardTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                          <CardTitle className="text-xl font-bold text-white">
                             {paper.title}
                           </CardTitle>
                           {paper.isUnderPublication && (
@@ -203,16 +244,29 @@ export function Projects() {
                     className="group h-full"
                   >
                     <Card className="overflow-hidden h-full border-0 bg-gradient-to-br from-background to-primary/5 hover:shadow-2xl transition-all duration-300 hover:shadow-primary/20 flex flex-col">
-                      <div className="aspect-video relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
+                      <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-primary/20 via-primary/10 to-transparent">
+                        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,black)]" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="grid grid-cols-3 gap-4 p-4">
+                            {project.tech.slice(0, 6).map((tech, i) => {
+                              const Icon = techIcons[tech] || Code2;
+                              return (
+                                <motion.div
+                                  key={i}
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  transition={{ delay: i * 0.1 }}
+                                  className="flex items-center justify-center"
+                                >
+                                  <Icon className="w-8 h-8 text-primary/80" />
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
                       </div>
                       <CardHeader className="relative z-20 -mt-12 pt-0">
-                        <CardTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                        <CardTitle className="text-xl font-bold text-white">
                           {project.title}
                         </CardTitle>
                       </CardHeader>
